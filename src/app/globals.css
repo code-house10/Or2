@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #1d1d1d;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1d1d1d;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1d1d1d;
+
+  --color-primary: #d30a0a;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #ff6a00;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #f7f7f7;
+  --color-muted-foreground: #777777;
+
+  --color-accent: #121521;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #ff6a00;
+
+  --color-chart-1: #ff6a00;
+  --color-chart-2: #d30a0a;
+  --color-chart-3: #121521;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #121521;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-primary: #ff6a00;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #1d1d1d;
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #1d1d1d;
+  --color-sidebar-ring: #ff6a00;
+
+  --color-safety-orange: #ff6a00;
+  --color-alert-red: #d30a0a;
+  --color-navy-dark: #121521;
+  --color-off-white: #f7f7f7;
+  --color-text-black: #1d1d1d;
+  --color-text-gray: #777777;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  --radius-lg: 4px;
+  --radius-md: 2px;
+  --radius-sm: 0px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e5e5;
+  }
+
+  :root {
+    --background: #ffffff;
+    --foreground: #1d1d1d;
+    --card: #ffffff;
+    --card-foreground: #1d1d1d;
+    --popover: #ffffff;
+    --popover-foreground: #1d1d1d;
+    --primary: #d30a0a;
+    --primary-foreground: #ffffff;
+    --secondary: #ff6a00;
+    --secondary-foreground: #ffffff;
+    --muted: #f7f7f7;
+    --muted-foreground: #777777;
+    --accent: #121521;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #ff6a00;
+    --radius: 4px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    direction: rtl;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-black);
+  }
+
+  h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 48px;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--color-text-gray);
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-safety-orange);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: rgba(18, 21, 33, 0.5);
+  }
+  
+  .card-shadow {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
